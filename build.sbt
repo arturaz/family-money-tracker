@@ -15,11 +15,16 @@ platformTarget := "android-25"
 
 javacOptions in Compile ++= "-source" :: "1.7" :: "-target" :: "1.7" :: Nil
 
+val monocleVersion = "1.4.0"
+
 libraryDependencies ++= Vector(
   "com.android.support" % "appcompat-v7" % "24.0.0",
   "com.android.support.test" % "runner" % "0.5" % "androidTest",
   "com.android.support.test.espresso" % "espresso-core" % "2.2.2" % "androidTest",
   "com.nrinaudo" %% "kantan.csv" % "0.1.18",
   "org.typelevel" %% "cats-core" % "0.9.0",
-  "com.softwaremill.quicklens" % "quicklens_2.11" % "1.4.8"
+  "com.softwaremill.quicklens" %% "quicklens" % "1.4.8",
+  "com.github.julien-truffaut" %%  "monocle-core"  % monocleVersion,
+  "com.github.julien-truffaut" %%  "monocle-macro" % monocleVersion,
+  "com.github.julien-truffaut" %%  "monocle-law"   % monocleVersion % "test"
 )
